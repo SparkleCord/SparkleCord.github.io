@@ -3,10 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SparkleCord</title>
+    <title>SparkleCord | Your Offline-First Chat Platform</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <!-- Google Fonts - Similar to Discord's -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=gg+sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Welcome to SparkleCord</h1>
-    <p>Coming soon...</p>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <img src="assets/logo.svg" alt="SparkleCord">
+                <span>SparkleCord</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="https://github.com/SparkleCord">GitHub</a>
+                <a href="#download" class="download-button">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>IMAGINE AN OFFLINE CHAT APP</h1>
+                <p>...that puts privacy first. Where you own your data. Where your messages are truly yours.</p>
+                <div class="cta-buttons">
+                    <a href="#download" class="button primary">Download for Windows</a>
+                    <a href="#download" class="button secondary">Open in Browser</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Will add app screenshot here -->
+                <div class="floating-elements">
+                    <div class="sparkle sparkle-1">✨</div>
+                    <div class="sparkle sparkle-2">⭐</div>
+                    <div class="sparkle sparkle-3">✨</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h2>Offline First</h2>
+                <p>Your messages stay on your device. No servers, no cloud storage, just pure privacy.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h2>Lightning Fast</h2>
+                <p>Zero latency messaging. Because local is always faster than remote.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h2>Customizable</h2>
+                <p>Themes, plugins, and mods. Make SparkleCord truly yours.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.svg" alt="SparkleCord">
+                <span>SparkleCord</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Product</h3>
+                    <a href="#download">Download</a>
+                    <a href="#features">Features</a>
+                    <a href="https://github.com/SparkleCord">Source Code</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Community</h3>
+                    <a href="https://github.com/SparkleCord">GitHub</a>
+                    <a href="#support">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
 </body>
 </html>
