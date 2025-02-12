@@ -8,12 +8,15 @@
     --success: #23a559;
     --danger: #f23f42;
     --spacing: clamp(0.75rem, 2vw, 1.5rem);
-    --logo-size: 16px;
+    --logo-size: 32px;
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+main {
+    padding-top: calc(var(--spacing) + var(--logo-size) + 1rem);
 }
 body {
     font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -87,7 +90,8 @@ body {
     max-width: 600px;
 }
 .hero-image {
-    scale: 70%;
+    transform: scale(0.7); 
+    transform-origin: center;
 }
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -197,6 +201,9 @@ footer {
     color: var(--text-primary);
 }
 @media (max-width: 768px) {
+    :root {
+        --logo-size: 24px;
+    }
     .hero {
         flex-direction: column;
         text-align: center;
