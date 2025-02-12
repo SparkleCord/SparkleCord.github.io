@@ -44,9 +44,9 @@ body {
     font-weight: 700;
     font-size: 1.2rem;
 }
-.nav-logo {
-    width: var(--logo-size);
-    height: var(--logo-size);
+.nav-logo img {
+    max-width: var(--logo-size);
+    max-height: var(--logo-size);
 }
 .nav-links {
     display: flex;
@@ -175,8 +175,8 @@ footer {
     font-weight: 700;
 }
 .footer-logo img {
-    width: var(--logo-size);
-    height: var(--logo-size);
+    max-width: var(--logo-size);
+    max-height: var(--logo-size);
 }
 .footer-links {
     display: flex;
