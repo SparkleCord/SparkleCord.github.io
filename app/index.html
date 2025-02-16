@@ -10,7 +10,7 @@
     <script>
         async function loadFromZIP() {
             try {
-                const response = await fetch('SparkleCord-1.0.zip');
+                const response = await fetch('SparkleCord-1.0.0.zip');
                 const blob = await response.blob();
                 const zip = new JSZip();
                 const contents = await zip.loadAsync(blob);
