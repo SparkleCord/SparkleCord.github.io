@@ -42,7 +42,7 @@
                   let anchor = document.createElement("a"); anchor.href = data.assets[0].browser_download_url; anchor.download = ""; document.body.appendChild(a); anchor.click(); anchor.remove(); 
                 }
             } catch (e) {
-                location.href = `https://github.com/SparkleCord/${repo}`;
+                console.error(e)
             }
         })();
     </script>
