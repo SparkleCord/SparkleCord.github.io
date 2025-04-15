@@ -36,7 +36,12 @@
             const base = `https://api.github.com/repos/SparkleCord/SparkleCord-${params.get("type") || "client"}/releases`;
             try {
                 const response = await fetch(version ? `${base}/tags/v${version}` : `${base}/latest`), data = await response.json();
-                let anchor = document.createElement("a"); anchor.textContent = "Click me to download if you're not redirected." ; anchor.href = data.assets[0].browser_download_url; anchor.download = ""; document.body.appendChild(a); anchor.click();
+                let anchor = document.createElement("a");
+                anchor.textContent = "Click me to download if you're not redirected." ;
+                anchor.href = data.assets[0].browser_download_url;
+                anchor.download = "";
+                document.body.appendChild(anchor);
+                anchor.click();
             } catch (e) {
                 console.error(e)
             }
