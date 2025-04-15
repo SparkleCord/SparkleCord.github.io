@@ -32,16 +32,15 @@
 <body>
     <script>
         (async () => {
-            const params = new URLSearchParams(location.search), type = params.get("type") || "client", version = params.get("version");
-            const repo = `SparkleCord-${type}`, base = `https://api.github.com/repos/SparkleCord/${repo}/releases`, api = version ? `${base}/tags/v${version}` : `${base}/latest`;
+            const params = new URLSearchParams(location.search), version = params.get("version");
+            const base = `https://api.github.com/repos/SparkleCord/SparkleCord-${params.get("type") || "client"}/releases`;
             try {
-                const response = await fetch(api), data = await response.json();
-                let anchor = document.createElement("a"); anchor.href = data.assets[0].browser_download_url; anchor.download = ""; document.body.appendChild(a); anchor.click(); anchor.remove(); 
+                const response = await fetch(version ? `${base}/tags/v${version}` : `${base}/latest`), data = await response.json();
+                let anchor = document.createElement("a"); anchor.textContent = "Click me to download if you're not redirected." ; anchor.href = data.assets[0].browser_download_url; anchor.download = ""; document.body.appendChild(a); anchor.click();
             } catch (e) {
                 console.error(e)
             }
         })();
     </script>
-    <p>If you aren't redirected, <a href="https://github.com/SparkleCord/SparkleCord-Client/releases/latest">click here</a>.</p>
 </body>
 </html>
