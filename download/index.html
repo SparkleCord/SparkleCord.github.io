@@ -36,16 +36,12 @@
             const repo = `SparkleCord-${type}`, base = `https://api.github.com/repos/SparkleCord/${repo}/releases`, api = version ? `${base}/tags/v${version}` : `${base}/latest`;
             try {
                 const response = await fetch(api), data = await response.json();
-                if (!data.assets || !data.assets.length) { 
-                  location.href = `https://github.com/SparkleCord/${repo}`; 
-                } else { 
-                  let anchor = document.createElement("a"); anchor.href = data.assets[0].browser_download_url; anchor.download = ""; document.body.appendChild(a); anchor.click(); anchor.remove(); 
-                }
+                let anchor = document.createElement("a"); anchor.href = data.assets[0].browser_download_url; anchor.download = ""; document.body.appendChild(a); anchor.click(); anchor.remove(); 
             } catch (e) {
                 console.error(e)
             }
         })();
     </script>
-    <p>If you aren't redirected, <a href="https://github.com/SparkleCord">click here</a>.</p>
+    <p>If you aren't redirected, <a href="https://github.com/SparkleCord/SparkleCord-Client/releases/latest">click here</a>.</p>
 </body>
 </html>
