@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Downloading SparkleCord...</title>
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <meta name="theme-color" content="#313338">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="SparkleCord | Your Offline-First Chat Platform">
+    <meta name="description" content="A privacy-focused chat app where you own your data. No servers, no cloud storage, just pure privacy with optional self-hosted servers.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sparklecord.github.io/">
+    <meta property="og:title" content="SparkleCord | Your Offline-First Chat Platform">
+    <meta property="og:description" content="A privacy-focused chat app where you own your data. No servers, no cloud storage, just pure privacy with optional self-hosted servers.">
+    <meta property="og:image" content="https://sparklecord.github.io/assets/logo.png">
+    <meta property="og:image:width" content="128">
+    <meta property="og:image:height" content="128">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://sparklecord.github.io/">
+    <meta property="twitter:title" content="SparkleCord | Your Offline-First Chat Platform">
+    <meta property="twitter:description" content="A privacy-focused chat app where you own your data. No servers, no cloud storage, just pure privacy with optional self-hosted servers.">
+    <meta property="twitter:image" content="https://sparklecord.github.io/assets/logo.png">
+    <!-- Theme Color for browsers -->
+    <meta name="theme-color" content="#C9CDFB">
+    <!-- Additional Meta Information -->
+    <meta name="keywords" content="chat, privacy, offline-first, self-hosted, open source, messaging">
+    <meta name="author" content="SparkleCord">
+    <meta name="robots" content="index, follow">
+</head>
+<body>
+    <script>
+        (async () => {
+            const params = new URLSearchParams(location.search), type = params.get("type") || "client", version = params.get("version");
+            const repo = `SparkleCord-${type}`, base = `https://api.github.com/repos/SparkleCord/${repo}/releases`, api = version ? `${base}/tags/v${version}` : `${base}/latest`;
+            try {
+                const response = await fetch(api), data = await response.json();
+                if (!data.assets || !data.assets.length) { 
+                  location.href = `https://github.com/SparkleCord/${repo}`; 
+                } else { 
+                  let anchor = document.createElement("a"); anchor.href = data.assets[0].browser_download_url; anchor.download = ""; document.body.appendChild(a); anchor.click(); anchor.remove(); 
+                }
+            } catch (e) {
+                location.href = `https://github.com/SparkleCord/${repo}`;
+            }
+        })();
+    </script>
+    <p>If you aren't redirected, <a href="https://github.com/SparkleCord">click here</a>.</p>
+</body>
+</html>
