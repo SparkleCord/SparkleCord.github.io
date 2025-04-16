@@ -1,1 +1,55 @@
-<iframe src="https://sparklecord.github.io/SparkleCord-Client/src/index.html" style="width:100vw;height:100vh;border:none;"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SparkleCord Web Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <meta name="theme-color" content="#313338">
+    <meta name="title" content="SparkleCord App">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sparklecord.github.io/app">
+    <meta property="og:title" content="SparkleCord App">
+    <meta property="og:image" content="https://sparklecord.github.io/assets/logo.png">
+    <meta property="og:image:width" content="128">
+    <meta property="og:image:height" content="128">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://sparklecord.github.io/app">
+    <meta property="twitter:title" content="SparkleCord App">
+    <meta property="twitter:image" content="https://sparklecord.github.io/assets/logo.png">
+</head>
+<body>
+  <iframe src="https://sparklecord.github.io/SparkleCord-Client/src/index.html" id="demoFrame"></iframe>
+  <script>
+    const iframe = document.getElementById('demoFrame');
+    window.addEventListener("message", e => {
+      if (e.data?.type === "updateTitle" && typeof e.data.title === "string") document.title = e.data.title;
+      if (e.data?.type === "updateFavicon" && typeof e.data.href === "string") {
+        let icon = document.querySelector("link[rel~='icon']");
+        if (!icon) {
+          icon = document.createElement("link");
+          icon.rel = "icon";
+          document.head.appendChild(icon);
+        }
+        icon.href = e.data.href;
+      }
+    });
+  </script>
+</body>
+</html>
