@@ -5,7 +5,7 @@
     --text-secondary: #b5bac1;
     --accent: #5865f2;
     --accent-hover: #4752c4;
-    --success: #23a559;
+    --success: #217c47;
     --danger: #f23f42;
     --spacing: clamp(0.75rem, 2vw, 1.5rem);
     --logo-size: 32px;
@@ -19,7 +19,7 @@ main {
     padding-top: calc(var(--spacing) + var(--logo-size) + 1rem);
 }
 body {
-    font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: var(--background);
     color: var(--text-primary);
     line-height: 1.6;
@@ -73,7 +73,7 @@ body {
     transition: background-color 0.2s ease !important;
 }
 .download-button:hover {
-    background-color: #1a8045;
+    background-color: #126133;
 }
 .hero {
     min-height: 100vh;
@@ -92,6 +92,9 @@ body {
 .hero-image {
     transform: scale(0.7); 
     transform-origin: center;
+}
+.hero-image img {
+    border-radius: 50px;
 }
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -199,6 +202,11 @@ footer {
 }
 .footer-column a:hover {
     color: var(--text-primary);
+}
+.hero-image {
+    position: relative;
+    flex: 1;
+    max-width: 600px;
 }
 @media (max-width: 768px) {
     :root {

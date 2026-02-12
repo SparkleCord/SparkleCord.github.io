@@ -37,7 +37,7 @@
 <body>
   <iframe src="https://sparklecord.github.io/SparkleCord-Client/src/index.html" id="demoFrame"></iframe>
   <script>
-    const iframe = document.getElementById('demoFrame');
+    const iframe = document.getElementById("demoFrame");
     window.addEventListener("message", e => {
       if (e.data?.type === "updateTitle" && typeof e.data.title === "string") document.title = e.data.title;
       if (e.data?.type === "updateFavicon" && typeof e.data.href === "string") {
