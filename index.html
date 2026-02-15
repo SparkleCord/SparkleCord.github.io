@@ -3,53 +3,520 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SparkleCord | A Breath of Fresh Air</title>
-    <link rel="stylesheet" href="main.css">
-    <link rel="icon" type="image/png" href="assets/logo.png">
+    <title>SparkleCord | High-Performance Open-Source Messaging</title>
+    <link rel="icon" type="image/png" href="./favicon.ico">
 
     <!-- main meta tags -->
-    <meta name="title" content="SparkleCord | A Breath of Fresh Air">
-    <meta name="description"
-        content="SparkleCord is an open-source messaging application that works without an internet connection at insane speeds.">
+    <meta name="title" content="SparkleCord | High-Performance Open-Source Messaging">
+    <meta name="description" content="SparkleCord is an open-source messaging app similar to Discord, and works locally without internet.">
     <meta name="theme-color" content="#313338">
 
     <!-- ograph, which is what discord uses -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sparklecord.github.io/">
-    <meta property="og:title" content="SparkleCord | A Breath of Fresh Air">
-    <meta property="og:description"
-        content="SparkleCord is an open-source messaging application that works without an internet connection at insane speeds.">
-    <meta property="og:image" content="https://sparklecord.github.io/assets/logo.png">
-    <meta property="og:image:width" content="128">
-    <meta property="og:image:height" content="128">
+    <meta property="og:title" content="SparkleCord | High-Performance Open-Source Messaging">
+    <meta property="og:description" content="SparkleCord is an open-source messaging app similar to Discord, and works locally without internet.">
+    <meta property="og:image" content="https://sparklecord.github.io/assets/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
     <!-- twitter, or X. -->
-    <meta property="twitter:card" content="summary">
+    <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sparklecord.github.io/">
-    <meta property="twitter:title" content="SparkleCord | A Breath of Fresh Air">
-    <meta property="twitter:description"
-        content="SparkleCord is an open-source messaging application that works without an internet connection at insane speeds.">
-    <meta property="twitter:image" content="https://sparklecord.github.io/assets/logo.png">
+    <meta property="twitter:title" content="SparkleCord | High-Performance Open-Source Messaging">
+    <meta property="twitter:description" content="SparkleCord is an open-source messaging app similar to Discord, and works locally without internet.">
+    <meta property="twitter:image" content="https://sparklecord.github.io/assets/banner.webp">
 
     <!-- additional info -->
-    <meta name="keywords" content="chat, privacy, offline-first, self-hosted, open source, messaging">
     <meta name="author" content="SparkleCord">
     <meta name="robots" content="index, follow">
 
     <!-- google verification -->
-     <meta name="google-site-verification" content="lV2vWZT74QTksZWrsQy1PpvVqUGFm2_zfQFLiGLSdGI" />
+    <meta name="google-site-verification" content="lV2vWZT74QTksZWrsQy1PpvVqUGFm2_zfQFLiGLSdGI" />
+
+    <!-- json-ld metadata -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "SparkleCord",
+            "operatingSystem": "Web, Windows, macOS, Linux",
+            "applicationCategory": "CommunicationApplication",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "description": "SparkleCord is an open-source messaging app similar to Discord, and works locally without internet.",
+            "softwareVersion": "1.4.2.1",
+            "softwareRequirements": "Modern Web Browser (Chrome, Firefox, Safari, Edge)",
+            "featureList": [
+                "Advanced message styling using markdown",
+                "Plugins and themes",
+                "Offline-capable user interface",
+                "Basic messaging features",
+                "Message reactions and replies",
+                "Profile customization",
+                "Custom theme support",
+                "Offline css editor",
+                "Maximum privacy"
+            ],
+            "screenshot": "https://sparklecord.github.io/assets/demo.webp",
+            "accessibilityFeature": [ "structuralNavigation", "tts", "highContrastDisplay" ],
+            "accessibilityControl": [ "fullKeyboardControl", "fullMouseControl" ],
+            "accessibilityHazard": "none",
+            "license": "https://opensource.org/licenses/MIT",
+            "downloadUrl": "https://sparklecord.github.io/download"
+        }
+    </script>
+
+    <!-- styles -->
+    <style>
+        @font-face {
+            font-family: "gg sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local("gg sans Normal Regular"), url("./assets/gg sans Regular.woff") format("woff");
+        }
+
+
+        @font-face {
+            font-family: "gg sans";
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: local("gg sans Medium Regular"), url("./assets/gg sans Medium.woff") format("woff");
+        }
+
+
+        @font-face {
+            font-family: "gg sans";
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: local("gg sans SemiBold Regular"), url("./assets/gg sans Semibold.woff") format("woff");
+        }
+
+        @font-face {
+            font-family: "gg sans";
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local("gg sans Bold"), url("./assets/gg sans Bold.woff") format("woff");
+        }
+
+        :root {
+            --background: #313338;
+            --background-light: #383a40;
+            --text-primary: #ffffff;
+            --text-secondary: #b5bac1;
+            --accent: #5865f2;
+            --accent-hover: #4752c4;
+            --success: #217c47;
+            --danger: #f23f42;
+            --spacing: clamp(0.75rem, 2vw, 1.5rem);
+            --logo-size: 32px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            padding-top: calc(var(--spacing) + var(--logo-size) + 1rem);
+        }
+
+        body {
+            font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--background);
+            padding: var(--spacing);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .nav-logo img {
+            max-width: var(--logo-size);
+            max-height: var(--logo-size);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .download-button {
+            background-color: var(--success);
+            color: var(--text-primary) !important;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            transition: background-color 0.2s ease !important;
+        }
+
+        .download-button:hover {
+            background-color: #126133;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: calc(var(--spacing) * 2);
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            transform: scale(0.7);
+            transform-origin: center;
+        }
+
+        .hero-image img {
+            border-radius: 50px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .button.primary {
+            background-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        .button.primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .button.secondary {
+            background-color: var(--background-light);
+            color: var(--text-primary);
+        }
+
+        .button.secondary:hover {
+            background-color: #424549;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: calc(var(--spacing) * 2);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--background-light);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+
+        footer {
+            background-color: var(--background-light);
+            padding: calc(var(--spacing) * 2);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+        }
+
+        .footer-logo img {
+            max-width: var(--logo-size);
+            max-height: var(--logo-size);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 4rem;
+        }
+
+        .footer-column h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-column a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--text-primary);
+        }
+
+        .hero-image {
+            position: relative;
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .section-heading {
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 4rem 0 3rem;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        .section-heading::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 0.75rem auto 0;
+            border-radius: 2px;
+        }
+
+        #all-features {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .item-grid li {
+            background: var(--background-light);
+            padding: 1rem 1.5rem;
+            border-radius: 0.75rem;
+            border-bottom: 4px solid var(--accent);
+            border-left: 4px solid var(--accent);
+            color: var(--text-secondary);
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
+
+        .item-grid li:hover {
+            transform: translateX(5px);
+            color: var(--text-primary);
+        }
+
+        .item-grid li strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        details {
+            background: var(--background-light);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        summary {
+            padding: 1.25rem;
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            transition: background 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        summary::after {
+            content: "＋";
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+
+        details[open] summary::after {
+            content: "－";
+        }
+
+        details p {
+            padding: 0 1.25rem 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --logo-size: 24px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero {
+                min-height: 70vh;
+            }
+
+            .cta-buttons {
+                justify-content: center;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links a {
+                display: none;
+            }
+
+            .nav-links .download-button {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-content">
             <div class="nav-logo">
-                <img src="./assets/logo.png" alt="SparkleCord">
+                <img src="./assets/logo-64.webp" width="48" height="48" alt="SparkleCord Logo">
                 <span>SparkleCord</span>
             </div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="https://github.com/SparkleCord">GitHub</a>
-                <a href="https://sparklecord.github.io/download" class="download-button">Download</a>
+                <a href="https://sparklecord.github.io/download" aria-label="Download SparkleCord" class="download-button">Download</a>
             </div>
         </div>
     </nav>
@@ -60,14 +527,15 @@
                 <h1>INTRODUCING SPARKLECORD</h1>
                 <p>An open-source chat application, with way more features than you could count.</p>
                 <div class="cta-buttons">
-                    <a href="https://sparklecord.github.io/download" class="button primary">Download</a>
+                    <a href="https://sparklecord.github.io/download" aria-label="Download SparkleCord" class="button primary">Download</a>
                     <a href="https://sparklecord.github.io/app" class="button secondary">Open in Browser</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./assets/demo2.png" alt="SparkleCord Demo">
+                <img src="./assets/demo.webp" alt="SparkleCord Demo Image">
             </div>
         </section>
+        <h2 class="section-heading">Main Features</h2>
         <section id="features" class="features">
             <div class="feature-card">
                 <div class="feature-icon">
@@ -91,11 +559,41 @@
                 <p>You can customize almost every portion of SparkleCord.</p>
             </div>
         </section>
+        <h2 class="section-heading">All Features</h2>
+        <section id="all-features">
+            <ul class="item-grid">
+                <li><strong>Advanced Markdown Features</strong>Bold, Italic, Strikethrough, Headers, and way more...</li>
+                <li><strong>Plugins</strong>Native plugin support, with 1 built-in plugin.</li>
+                <li><strong>Custom Themes</strong>You can customize the interface using CSS or the client theme feature.</li>
+                <li><strong>Chat Features</strong>Slash Commands, Replies, Reactions, and more.</li>
+                <li><strong>Performance</strong>SparkleCord can run on potato PCs.</li>
+                <li><strong>File Uploads</strong>You can upload any type of file, without size limits.</li>
+                <li><strong>Accessibility Features</strong>High Contrast Mode, Saturation, Link Underlining, and more.</li>
+                <li><strong>Highly Customizable</strong>You can change many things using just the settings menu.</li>
+            </ul>
+        </section>
+        <section id="faq" class="faq-section">
+            <h2 class="section-heading">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <details>
+                    <summary>Can you chat with other people?</summary>
+                    <p>Not yet. Self-hosting features will be implemented in the near future.</p>
+                </details>
+                <details>
+                    <summary>Is my data secure?</summary>
+                    <p>Absolutely. SparkleCord is fully client-side and open-source, so everything is on your device only.</p>
+                </details>
+                <details>
+                    <summary>Can I make custom plugins?</summary>
+                    <p>Yes, you can create a .js file in the /plugins subfolder, and the rest is simple.</p>
+                </details>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-content">
             <div class="footer-logo">
-                <img src="./assets/logo.png" alt="SparkleCord">
+                <img src="./assets/logo-64.webp" width="48" height="48" alt="SparkleCord Logo">
                 <span>SparkleCord</span>
             </div>
             <div class="footer-links">
@@ -109,6 +607,10 @@
                     <h3>Community</h3>
                     <a href="https://github.com/SparkleCord/SparkleCord-Client">GitHub Repository</a>
                     <a href="https://discord.gg/2KSv4cYaDC">Discord Server</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <a href="https://github.com/SparkleCord/SparkleCord-Client/blob/main/LICENSE">License (MIT)</a>
                 </div>
             </div>
         </div>
